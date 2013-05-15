@@ -1,0 +1,21 @@
+./botan_whirlpool
+	test_1k 0.080080
+	test_10k 0.058930
+	test_100k 0.061250
+	test_1M 0.044340
+	test_10M 0.047490
+
+./gcrypt_whirlpool
+	test_1k 0.012950
+	test_10k 0.002490
+	test_100k 0.002910
+	test_1M 0.003380
+	test_10M 0.004280
+
+./cryptopp_whirlpool
+	test_1k 0.032650
+	test_10k 0.012180
+	test_100k 0.012990
+	test_1M 0.020590
+	test_10M 0.028690
+
