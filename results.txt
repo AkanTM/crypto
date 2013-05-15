@@ -1,21 +1,21 @@
 ./botan_whirlpool
-	test_1k 0.080080
-	test_10k 0.058930
-	test_100k 0.061250
-	test_1M 0.044340
-	test_10M 0.047490
+	test_1k: 0.084110 seconds; 2447810 peak rss
+	test_10k: 0.079210 seconds; 2471813 peak rss
+	test_100k: 0.047140 seconds; 2471976 peak rss
+	test_1M: 0.045360 seconds; 2472140 peak rss
+	test_10M: 0.044670 seconds; 2471731 peak rss
 
 ./gcrypt_whirlpool
-	test_1k 0.012950
-	test_10k 0.002490
-	test_100k 0.002910
-	test_1M 0.003380
-	test_10M 0.004280
+	test_1k: 0.013220 seconds; 2392064 peak rss
+	test_10k: 0.002440 seconds; 2392064 peak rss
+	test_100k: 0.002830 seconds; 2392064 peak rss
+	test_1M: 0.004340 seconds; 2392064 peak rss
+	test_10M: 0.004390 seconds; 2392064 peak rss
 
 ./cryptopp_whirlpool
-	test_1k 0.032650
-	test_10k 0.012180
-	test_100k 0.012990
-	test_1M 0.020590
-	test_10M 0.028690
+	test_1k: 0.032250 seconds; 3565731 peak rss
+	test_10k: 0.011050 seconds; 3349381 peak rss
+	test_100k: 0.011550 seconds; 3349422 peak rss
+	test_1M: 0.012750 seconds; 3349381 peak rss
+	test_10M: 0.020470 seconds; 3349585 peak rss
 

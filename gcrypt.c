@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/resource.h>
 
 char b64string[] =
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -138,6 +140,11 @@ int main(int argc, char* argv[])
 	// printf("%s\n", base64_encode( hash, sizeof(hash), &len));
 
 	gcry_md_close(hd);
+
+	struct rusage rusage;
+	getrusage( RUSAGE_SELF, &rusage );
+
+	printf("%li\n",  rusage.ru_maxrss * 1024L );
 
 	return 0;
 } 

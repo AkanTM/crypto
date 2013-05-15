@@ -2,8 +2,8 @@
 
 #include <cryptopp/base64.h>
 
-
-
+#include <unistd.h>
+#include <sys/resource.h>
 #include <iostream>
 #include <fstream>
 #include <ctime>
@@ -60,6 +60,11 @@ int main(int argc, char* argv[])
 
 	std::cout << output << "\n";
 	std::cout << time_stop - time_start <<"\n";
+
+	struct rusage rusage;
+	getrusage( RUSAGE_SELF, &rusage );
+
+	std::cout << rusage.ru_maxrss * 1024L << "\n";
 
 	return 0;
 }

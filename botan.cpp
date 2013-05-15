@@ -2,6 +2,12 @@
 #include <botan/whrlpool.h>
 #include <botan/base64.h>
 
+#include <unistd.h>
+#include <ios>
+#include <string>
+
+#include <sys/resource.h>
+
 #include <iostream>
 #include <fstream>
 #include <ctime>
@@ -10,6 +16,7 @@
 
 
 using namespace Botan;
+
 
 int main(int argc, char* argv[])
 {
@@ -57,6 +64,10 @@ int main(int argc, char* argv[])
 
 	std::cout << time_stop - time_start <<"\n";
 
+   	struct rusage rusage;
+	getrusage( RUSAGE_SELF, &rusage );
+
+	std::cout << rusage.ru_maxrss * 1024L << "\n";
 	
 	return 0;
 }

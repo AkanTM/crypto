@@ -21,18 +21,21 @@ for exe in execs:
 	for afile in files:
 
 		total_time = 0
-		
+		total_memory = 0	
+
 		for i in xrange(no_test):
 			p = subprocess.Popen([exe, afile], stdout=subprocess.PIPE)
 			p.wait()
 
 			out = p.stdout.read()
 			time = float ( out.split("\n")[1] )
+			memory = long( out.split("\n")[2] )
 			total_time +=time
+			total_memory += memory
 
-		print "Done %s with time: %f seconds" %(afile, total_time / no_test)
+		print "Done %s with time: %f seconds and peak rss: %ld" %(afile, total_time / no_test, total_memory/no_test)
 
-		g.write("\t%s %f\n" %(afile , total_time / no_test ))
+		g.write("\t%s: %f seconds; %ld peak rss\n" %(afile , total_time / no_test, total_memory/no_test))
 
 	g.write("\n")
 
